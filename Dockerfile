@@ -1,7 +1,9 @@
 FROM golang:1.22.0-alpine3.19
 WORKDIR /app
+ENV CGO_ENABLED=1
+ENV GOOS=linux
+ENV GOARCH=amd64
 COPY ./ ./
-RUN go install github.com/goreleaser/goreleaser@latest
-RUN goreleaser build --single-target
+RUN go build -o /app/app
 EXPOSE 8080
-CMD ["/dist/binapp"]
+CMD ["/app/app"]
