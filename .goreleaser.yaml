@@ -22,9 +22,9 @@ builds:
       - linux
       - windows
       - darwin
-    binary: bin/app
+    #binary: bin/app
     id: test-go-web
-    no_unique_dist_dir: true
+    #no_unique_dist_dir: true
 archives:
   - format: tar.gz
     # this name template makes the OS and Arch compatible with the results of `uname`.
